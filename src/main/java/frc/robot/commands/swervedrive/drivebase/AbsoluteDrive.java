@@ -47,14 +47,14 @@ public class AbsoluteDrive extends Command
    *                          robot coordinate system, this is along the same axis as vX.  Should range from -1 to 1
    *                          with no deadband. Positive is away from the alliance wall.
    */
-  public AbsoluteDrive(SwerveSubsystem swerve, DoubleSupplier vX, DoubleSupplier vY, DoubleSupplier headingHorizontal,
-                       DoubleSupplier headingVertical)
+  public AbsoluteDrive(SwerveSubsystem swerve, DoubleSupplier vX, DoubleSupplier vY, DoubleSupplier lefttrigger,
+                       DoubleSupplier righttrigger)
   {
     this.swerve = swerve;
     this.vX = vX;
     this.vY = vY;
-    this.headingHorizontal = headingHorizontal;
-    this.headingVertical = headingVertical;
+    this.headingHorizontal = lefttrigger;
+    this.headingVertical = righttrigger;
 
     addRequirements(swerve);
   }
